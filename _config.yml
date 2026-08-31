@@ -1,5 +1,7 @@
 title: Jongeume
 description: 기록과 생각
 theme: minima
+timezone: Asia/Seoul
 plugins:
   - jekyll-feed
+  
