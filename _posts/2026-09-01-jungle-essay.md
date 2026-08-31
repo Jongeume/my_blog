@@ -1,7 +1,9 @@
+---
 layout: post 
 title: "첫 번째 글" 
-date: 2026-09-01 
+date: 2026-09-01 00:00:00 +0900
 categories: essay
+---
 
 # 몰입과 소통 사이에서
 
