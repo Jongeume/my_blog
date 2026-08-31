@@ -1,5 +1,5 @@
 layout: post 
-title: "첫 번째 글" 
+title: "정글_에세이" 
 date: 2026-09-01 
 categories: essay
 
