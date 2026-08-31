@@ -1,7 +1,9 @@
+---
 layout: post 
 title: "정글_에세이" 
 date: 2026-09-01 
 categories: essay
+---
 
 # 몰입과 소통 사이에서
 
