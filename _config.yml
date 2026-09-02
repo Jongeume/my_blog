@@ -1,7 +1,10 @@
 title: Jongeume
-description: 기록과 생각
+description: 말하는 감자
 theme: minima
 timezone: Asia/Seoul
 plugins:
   - jekyll-feed
   
+header_pages:
+  - essay.md
+  - dev.md
