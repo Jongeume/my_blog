@@ -6,5 +6,5 @@ plugins:
   - jekyll-feed
   
 header_pages:
-  - essay.md
-  - dev.md
+  - pages/essay.md
+  - pages/dev.md
