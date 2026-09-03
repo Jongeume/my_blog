@@ -4,7 +4,7 @@ title: Dev
 permalink: /dev/
 ---
 
-## 분류
+# 분류
 
 - [Algorithm]({{ "/dev/algorithm/" | relative_url }})
 - [CS]({{ "/dev/cs/" | relative_url }})
