@@ -1,6 +1,6 @@
 # Jongeume 블로그
 
-[https://jongeume.github.io](https://jongeume.github.io)
+[https://jongeume.github.io/my_blog/](https://jongeume.github.io/my_blog/)
 
 크래프톤 정글 여정과 개발 공부를 기록하는 블로그. [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) 테마 기반.
 
