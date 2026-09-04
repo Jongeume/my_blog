@@ -1,0 +1,43 @@
+name: Mirror posts to archive
+
+# _posts/ 가 바뀌면 krafton-jungle-2026/blog/_posts/ 로 자동 미러링(아카이브)한다.
+# 필요: 아카이브 리포에 쓸 수 있는 PAT를 시크릿 ARCHIVE_REPO_TOKEN 으로 등록.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "_posts/**"
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout blog
+        uses: actions/checkout@v4
+
+      - name: Checkout archive repo
+        uses: actions/checkout@v4
+        with:
+          repository: Jongeume/krafton-jungle-2026
+          token: ${{ secrets.ARCHIVE_REPO_TOKEN }}
+          path: archive
+
+      - name: Sync _posts -> archive/blog/_posts
+        run: |
+          mkdir -p archive/blog/_posts
+          rsync -a --delete _posts/ archive/blog/_posts/
+
+      - name: Commit & push if changed
+        run: |
+          cd archive
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog/_posts
+          if git diff --cached --quiet; then
+            echo "변경 없음 — 커밋 생략"
+          else
+            git commit -m "docs: 블로그 글 자동 아카이브 동기화"
+            git push
+          fi
