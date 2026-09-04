@@ -1,0 +1,29 @@
+name: PR Build Check
+
+# main으로 향하는 PR에서 Chirpy 빌드가 성공하는지 검사한다 (배포하지 않음).
+# 이 검사(job 이름: build)를 브랜치 보호의 필수 상태 체크로 지정한다.
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4"
+          bundler-cache: true
+
+      - name: Build site (검증용)
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
